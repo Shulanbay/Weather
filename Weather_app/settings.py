@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEMPLATE_DIRS = ['/Users/asus/Desktop/w/Weather/Weather/templates']
+
+
 
 # Application definition
 
@@ -37,8 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+
     'weather',
+    'user',
+    'article',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +80,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'Weather_app.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 
 # Database
@@ -116,8 +133,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
+
+MEDIA_URL='/media/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATICFILES_DIRS=[
+    os.path.join(os.path.dirname(BASE_DIR),'media')
+]
 
 STATIC_URL = '/static/'

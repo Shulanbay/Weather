@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Стена</title>
+</head>
+<body>
+{% for article in articles %}
+<center><h2>{{ article.article_title }}</h2></center>
+{% block articles %}{% endblock %}                                                                                                                                                                     <img src="https://cdn.fishki.net/upload/post/2018/06/02/2614513/31888426-2096019117312119-3604774997949677568-n.jpg"  class="img-thumbnail" alt="weather" width="1000" height="600" hspace="250" vspace="10">
+<p>{{ article.article_text }}</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+{% endfor %}
+</body>
+</html>

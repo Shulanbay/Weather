@@ -2,4 +2,7 @@ a{
 color: red;
 font-size: 30px;
 }
-
+.navbar navbar-default navbar-inverse{
+    background-color: #008080;
+    position: relative;
+}
